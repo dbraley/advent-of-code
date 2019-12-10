@@ -12,24 +12,24 @@ func TestFuel(t *testing.T) {
 		want int
 	}{
 		{
-			name:"12",
-			args:args{mass:12},
-			want:2,
+			name: "12",
+			args: args{mass: 12},
+			want: 2,
 		},
 		{
-			name:"14",
-			args:args{mass:14},
-			want:2,
+			name: "14",
+			args: args{mass: 14},
+			want: 2,
 		},
 		{
-			name:"1969",
-			args:args{mass:1969},
-			want:654,
+			name: "1969",
+			args: args{mass: 1969},
+			want: 654,
 		},
 		{
-			name:"100756",
-			args:args{mass:100756},
-			want:33583,
+			name: "100756",
+			args: args{mass: 100756},
+			want: 33583,
 		},
 	}
 	for _, tt := range tests {
@@ -43,8 +43,8 @@ func TestFuel(t *testing.T) {
 
 func TestTransformAndSum(t *testing.T) {
 	type args struct {
-		masses []int
-		transform func(int)int
+		masses    []int
+		transform func(int) int
 	}
 	tests := []struct {
 		name string
@@ -52,19 +52,19 @@ func TestTransformAndSum(t *testing.T) {
 		want int
 	}{
 		{
-			name:"12+14",
-			args:args{masses:[]int{12, 14}, transform:Fuel},
-			want:4,
+			name: "12+14",
+			args: args{masses: []int{12, 14}, transform: Fuel},
+			want: 4,
 		},
 		{
-			name:"12+14+1969+100756",
-			args:args{masses:[]int{12, 14, 1969, 100756},transform:Fuel},
-			want:2+2+654+33583,
+			name: "12+14+1969+100756",
+			args: args{masses: []int{12, 14, 1969, 100756}, transform: Fuel},
+			want: 2 + 2 + 654 + 33583,
 		},
 		{
-			name:"12+14+1969+100756",
-			args:args{masses:[]int{12, 14, 1969, 100756},transform:Fuel2},
-			want:2+2+966+50346,
+			name: "12+14+1969+100756",
+			args: args{masses: []int{12, 14, 1969, 100756}, transform: Fuel2},
+			want: 2 + 2 + 966 + 50346,
 		},
 	}
 	for _, tt := range tests {
@@ -86,14 +86,14 @@ func TestFuel2(t *testing.T) {
 		want int
 	}{
 		{
-			name:"14",
-			args:args{mass:14},
-			want:2,
+			name: "14",
+			args: args{mass: 14},
+			want: 2,
 		},
 		{
-			name:"1969",
-			args:args{mass:1969},
-			want:654+216+70+21+5,
+			name: "1969",
+			args: args{mass: 1969},
+			want: 654 + 216 + 70 + 21 + 5,
 		},
 	}
 	for _, tt := range tests {

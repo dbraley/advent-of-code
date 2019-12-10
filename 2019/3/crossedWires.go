@@ -1,11 +1,11 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"os"
 	"strconv"
 )
-import "encoding/csv"
 
 func main() {
 	strings, err := Read("input")
@@ -66,7 +66,7 @@ func Read(fileName string) ([][]string, error) {
 
 type Line struct {
 	x0, y0, x1, y1 int
-	l0, l1 int
+	l0, l1         int
 }
 
 func ToLines(vectors []string) ([]Line, error) {
@@ -132,13 +132,13 @@ func FindIntersections(l1, l2 Line) []Coordinate {
 	if l1.isHorizontal() && l2.isVertical() {
 		if overlapsOnX(l1, l2) && overlapsOnY(l1, l2) {
 			intersections = append(intersections, Coordinate{l2.x0, l1.y0,
-				l1.l0 + abs(l1.x0 - l2.x0) + l2.l0 + abs(l2.y0 - l1.y0)})
+				l1.l0 + abs(l1.x0-l2.x0) + l2.l0 + abs(l2.y0-l1.y0)})
 		}
 	}
 	if l2.isHorizontal() && l1.isVertical() {
 		if overlapsOnX(l2, l1) && overlapsOnY(l2, l1) {
 			intersections = append(intersections, Coordinate{l1.x0, l2.y0,
-				l1.l0 + abs(l1.y0 - l2.y0) + l2.l0 + abs(l2.x0 - l1.x0)})
+				l1.l0 + abs(l1.y0-l2.y0) + l2.l0 + abs(l2.x0-l1.x0)})
 		}
 	}
 	return intersections

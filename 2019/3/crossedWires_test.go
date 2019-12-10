@@ -16,19 +16,19 @@ func TestRead(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			name:    "Basic",
-			args:    args{
+			name: "Basic",
+			args: args{
 				fileName: "testdata/basic",
 			},
-			want:    [][]string{{"R1"},{"L1"}},
+			want:    [][]string{{"R1"}, {"L1"}},
 			wantErr: false,
 		},
 		{
-			name:    "Multiple",
-			args:    args{
+			name: "Multiple",
+			args: args{
 				fileName: "testdata/multiple",
 			},
-			want:    [][]string{{"R1","U1"},{"L1","D1"}},
+			want:    [][]string{{"R1", "U1"}, {"L1", "D1"}},
 			wantErr: false,
 		},
 	}
@@ -74,13 +74,13 @@ func TestToLines(t *testing.T) {
 		{
 			name: "R1,U2,L3,D4",
 			args: args{
-				dirs: []string{"R1","U2","L3","D4"},
+				dirs: []string{"R1", "U2", "L3", "D4"},
 			},
 			want: []Line{
-				{0,0,1,0, 0, 1},
-				{1,0,1,2, 1, 3},
-				{1,2,-2,2, 3, 6},
-				{-2,2,-2,-2, 6, 10},
+				{0, 0, 1, 0, 0, 1},
+				{1, 0, 1, 2, 1, 3},
+				{1, 2, -2, 2, 3, 6},
+				{-2, 2, -2, -2, 6, 10},
 			},
 		},
 	}
@@ -106,18 +106,18 @@ func TestIntersection(t *testing.T) {
 		{
 			name: "Parallel",
 			args: args{
-				l1: Line{0,0,2,0, 0, 0},
-				l2: Line{0,1,2,1, 0, 0},
+				l1: Line{0, 0, 2, 0, 0, 0},
+				l2: Line{0, 1, 2, 1, 0, 0},
 			},
 			want: []Coordinate{},
 		},
 		{
 			name: "Cross",
 			args: args{
-				l1: Line{-2,0,2,0, 0, 0},
-				l2: Line{0,-1,0,1, 0, 0},
+				l1: Line{-2, 0, 2, 0, 0, 0},
+				l2: Line{0, -1, 0, 1, 0, 0},
 			},
-			want: []Coordinate{{0,0, 3}},
+			want: []Coordinate{{0, 0, 3}},
 		},
 	}
 	for _, tt := range tests {
