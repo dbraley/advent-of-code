@@ -8,6 +8,7 @@ import (
 
 // ReadFileOfInts reads a file of one int per line into an array of ints. Returns an error if there is a problem reading or parsing the file
 func ReadFileOfInts(fileName string) ([]int, error) {
+	// TODO: This would be better with some testing
 	file, err := os.Open(fileName)
 	if err != nil {
 		return []int{}, err
