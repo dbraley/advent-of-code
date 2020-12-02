@@ -43,7 +43,7 @@ func TestFindCommon(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got1, got2, gotE := FindCommon(tt.in, tt.sum)
 			if tt.wantE != gotE {
-				t.Errorf("Expected %w, got %w", tt.wantE, gotE)
+				t.Errorf("Expected %v, got %w", tt.wantE, gotE)
 			}
 			switch tt.want1 {
 			case got1:

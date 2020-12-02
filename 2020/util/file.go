@@ -1,6 +1,7 @@
 package util
 
 import (
+	"encoding/csv"
 	"fmt"
 	"io"
 	"os"
@@ -28,4 +29,17 @@ func ReadFileOfInts(fileName string) ([]int, error) {
 		ret = append(ret, line)
 	}
 	return ret, nil
+}
+
+// ReadSSV reads a space seperate file into an array of arrays of strings
+func ReadSSV(fileName string) ([][]string, error) {
+	file, err := os.Open(fileName)
+	if err != nil {
+		return [][]string{}, err
+	}
+	defer file.Close()
+
+	reader := csv.NewReader(file)
+	reader.Comma = ' '
+	return reader.ReadAll()
 }
