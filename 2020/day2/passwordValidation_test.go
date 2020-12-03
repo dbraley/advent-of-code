@@ -2,7 +2,7 @@ package day2
 
 import "testing"
 
-func TestCountValid(t *testing.T) {
+func TestCountValidByRange(t *testing.T) {
 	tests := []struct {
 		name    string
 		in      [][]string
@@ -38,7 +38,78 @@ func TestCountValid(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotCnt, gotErr := CountValid(tt.in)
+			gotCnt, gotErr := CountValidByRange(tt.in)
+			if tt.wantErr != gotErr {
+				t.Errorf("Expected %v, got %w\n", tt.wantErr, gotErr)
+			}
+			if tt.wantCnt != gotCnt {
+				t.Errorf("Expected valid count of %v, got %v\n", tt.wantCnt, gotCnt)
+			}
+		})
+	}
+}
+
+func TestCountValidPosition(t *testing.T) {
+	tests := []struct {
+		name    string
+		in      [][]string
+		wantCnt int
+		wantErr error
+	}{
+		{
+			name: "Invalid Row",
+			in: [][]string{
+				{"1-3", "a:", "aaa", "bbb"},
+			},
+			wantCnt: 0,
+			wantErr: ErrInvalidRow,
+		},
+		{
+			name: "Matches Neither position",
+			in: [][]string{
+				{"1-3", "a:", "bbb"},
+			},
+			wantCnt: 0,
+			wantErr: nil,
+		},
+		{
+			name: "Matches First position",
+			in: [][]string{
+				{"1-3", "a:", "abb"},
+			},
+			wantCnt: 1,
+			wantErr: nil,
+		},
+		{
+			name: "Matches Second position",
+			in: [][]string{
+				{"1-3", "a:", "bba"},
+			},
+			wantCnt: 1,
+			wantErr: nil,
+		},
+		{
+			name: "Matches Both positions",
+			in: [][]string{
+				{"1-3", "a:", "aaa"},
+			},
+			wantCnt: 0,
+			wantErr: nil,
+		},
+		{
+			name: "First 3 Rows",
+			in: [][]string{
+				{"9-12", "q:", "qqqxhnhdmqqqqjz"},   // 9:m, 12:q, valid
+				{"12-16", "z:", "zzzzzznwlzzjzdzf"}, // 12: j, 15: f, invalid
+				{"4-7", "s:", "sssgssw"},            // 4: g, 7: w, invalid
+			},
+			wantCnt: 1,
+			wantErr: nil,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotCnt, gotErr := CountValidByPosition(tt.in)
 			if tt.wantErr != gotErr {
 				t.Errorf("Expected %v, got %w\n", tt.wantErr, gotErr)
 			}
@@ -156,7 +227,7 @@ func Test_check(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if tt.want != check(tt.c, tt.lb, tt.ub, tt.in) {
+			if tt.want != checkRange(tt.c, tt.lb, tt.ub, tt.in) {
 				t.Errorf("Expected %v, got %v\n", tt.want, !tt.want)
 			}
 		})
