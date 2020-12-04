@@ -1,11 +1,28 @@
 package util
 
 import (
+	"bufio"
 	"encoding/csv"
 	"fmt"
 	"io"
 	"os"
 )
+
+// ReadFile simply reads a file to an array of strings. Returns an error if there is a problem reading the file.
+func ReadFile(fileName string) ([]string, error) {
+	file, err := os.Open(fileName)
+	if err != nil {
+		return []string{}, err
+	}
+	defer file.Close()
+
+	var lines []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	return lines, scanner.Err()
+}
 
 // ReadFileOfInts reads a file of one int per line into an array of ints. Returns an error if there is a problem reading or parsing the file
 func ReadFileOfInts(fileName string) ([]int, error) {
