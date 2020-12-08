@@ -15,6 +15,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	max := day5.Max(in)
+	max, seat := day5.Find(in)
 	fmt.Printf("Part 1: %v\n", max)
+	fmt.Printf("Part 2: %v\n", seat)
 }
