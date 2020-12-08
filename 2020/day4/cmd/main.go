@@ -15,9 +15,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	count, err := day4.CountValidPassports(in)
+	count, count2, err := day4.CountValidPassports(in)
 	if err != nil {
 		fmt.Printf("Error parsing file %v \n", err)
 	}
 	fmt.Printf("Part 1: %v\n", count)
+	fmt.Printf("Part 2: %v\n", count2)
 }

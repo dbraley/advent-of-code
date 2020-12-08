@@ -3,6 +3,8 @@ package day4
 import (
 	"errors"
 	"fmt"
+	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -28,6 +30,66 @@ func (p passport) isValid() bool {
 		p.hcl != "" &&
 		p.ecl != "" &&
 		p.pid != ""
+}
+
+func (p passport) isMoreValid() bool {
+	return isNumberInRange(p.byr, 1920, 2002) &&
+		isNumberInRange(p.iyr, 2010, 2020) &&
+		isNumberInRange(p.eyr, 2020, 2030) &&
+		isValidHeight(p.hgt) &&
+		isValidColor(p.hcl) &&
+		isValidEyeColor(p.ecl) &&
+		isValidPID(p.pid)
+}
+
+func isNumberInRange(value string, min, max int) bool {
+	val, err := strconv.Atoi(value)
+	if err != nil {
+		return false
+	}
+	return min <= val && val <= max
+}
+
+var heightInCM = regexp.MustCompile(`([0-9]+)cm`)
+var heightInInches = regexp.MustCompile(`([0-9]+)in`)
+
+func isValidHeight(value string) bool {
+	matchCm := heightInCM.FindStringSubmatch(value)
+	if len(matchCm) >= 2 {
+		return isNumberInRange(matchCm[1], 150, 193)
+	}
+	matchIn := heightInInches.FindStringSubmatch(value)
+	if len(matchIn) >= 2 {
+		return isNumberInRange(matchIn[1], 59, 76)
+	}
+	return false
+}
+
+var color = regexp.MustCompile(`#[0-9a-f]{6}`)
+
+func isValidColor(value string) bool {
+	return color.MatchString(value)
+}
+
+var eyeColors = map[string]struct{}{
+	"amb": {},
+	"blu": {},
+	"brn": {},
+	"gry": {},
+	"grn": {},
+	"hzl": {},
+	"oth": {},
+}
+
+func isValidEyeColor(value string) bool {
+	_, exists := eyeColors[value]
+	return exists
+}
+
+var pid = regexp.MustCompile(`\d{9}`)
+
+func isValidPID(value string) bool {
+	return pid.MatchString(value) && len(value) == 9
 }
 
 func (p *passport) setField(nameAndValue string) error {
@@ -59,19 +121,22 @@ func (p *passport) setField(nameAndValue string) error {
 }
 
 // CountValidPassports counts valid passports.
-func CountValidPassports(in []string) (int, error) {
+func CountValidPassports(in []string) (int, int, error) {
 	passports, err := parsePassports(in)
 	if err != nil {
-		fmt.Printf("Error parsing passports %v\n", err)
-		return 0, err
+		return 0, 0, err
 	}
-	var count int
+	var count, count2 int
 	for _, p := range passports {
 		if p.isValid() {
 			count++
 		}
+		if p.isMoreValid() {
+			// fmt.Printf("valid: %+v\n", p)
+			count2++
+		}
 	}
-	return count, nil
+	return count, count2, nil
 }
 
 func parsePassports(in []string) ([]passport, error) {
