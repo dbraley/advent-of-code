@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/dbraley/advent-of-code/file"
+	"github.com/dbraley/advent-of-code/math"
 	"os"
 	"strconv"
 )
@@ -17,7 +18,7 @@ func (p point) move(xVec int, yVec int) point {
 }
 
 func (p point) follow(head point) (point, bool) {
-	needToMove := Abs(p.X-head.X) > 1 || Abs(p.Y-head.Y) > 1
+	needToMove := !math.WithinOne(p.X, head.X) || !math.WithinOne(p.Y, head.Y)
 	if !needToMove {
 		return p, false
 	}
@@ -33,13 +34,6 @@ func (p point) follow(head point) (point, bool) {
 		yVec = -1
 	}
 	return p.move(xVec, yVec), true
-}
-
-func Abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 func main() {

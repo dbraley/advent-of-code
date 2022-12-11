@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/dbraley/advent-of-code/file"
+	"github.com/dbraley/advent-of-code/math"
 	"os"
 	"strconv"
 	"strings"
@@ -51,13 +52,6 @@ func main() {
 	fmt.Printf("Screen:\n%v", screen)
 }
 
-func Abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
 func strength(x int, clock int) int {
 	if (clock+20)%40 == 0 {
 		//fmt.Printf("Evaluating strength! Clock %d\tX %d\n", clock, x)
@@ -69,7 +63,7 @@ func strength(x int, clock int) int {
 func render(x int, clock int) string {
 	pixel := "."
 	col := clock % 40
-	if Abs(x-col) < 2 {
+	if math.WithinOne(x, col) {
 		pixel = "#"
 	}
 	if col == 0 {
