@@ -4,22 +4,18 @@ import (
 	"errors"
 	"fmt"
 	"github.com/dbraley/advent-of-code/file"
+	"github.com/dbraley/advent-of-code/math"
 	"os"
 	"strings"
 )
 
 type ValuePoint struct {
-	X     int
-	Y     int
+	Point math.Point2D
 	Value rune
 }
 
-func (p ValuePoint) String() string {
-	return fmt.Sprintf("(%d, %d, %c)", p.X, p.Y, p.Value)
-}
-
-func (p ValuePoint) move(xVec int, yVec int) ValuePoint {
-	return ValuePoint{X: p.X + xVec, Y: p.Y + yVec}
+func (p ValuePoint) Translate(x, y int) ValuePoint {
+	return ValuePoint{Point: p.Point.Translate(x, y)}
 }
 
 func (p ValuePoint) canTravel(maybe ValuePoint) bool {
@@ -66,9 +62,9 @@ func main() {
 		fmt.Printf("Inspecting %v\n", pathInspect)
 		lastPos := pathInspect[len(pathInspect)-1]
 
-		rightPos := lastPos.move(1, 0)
-		if isValidPoint(rightPos, input) {
-			rightPos.Value = []rune(input[rightPos.Y])[rightPos.X]
+		rightPos := lastPos.Translate(1, 0)
+		if isValidPoint(rightPos.Point, input) {
+			rightPos.Value = []rune(input[rightPos.Point.Y])[rightPos.Point.X]
 			if lastPos.canTravel(rightPos) {
 				fmt.Printf("\tCan travel Right %v!\n", rightPos)
 				if !seenAlready(seen, rightPos) {
@@ -83,9 +79,9 @@ func main() {
 			}
 		}
 
-		downPos := lastPos.move(0, 1)
-		if isValidPoint(downPos, input) {
-			downPos.Value = []rune(input[downPos.Y])[downPos.X]
+		downPos := lastPos.Translate(0, 1)
+		if isValidPoint(downPos.Point, input) {
+			downPos.Value = []rune(input[downPos.Point.Y])[downPos.Point.X]
 			if lastPos.canTravel(downPos) {
 				fmt.Printf("\tCan travel Down! %v\n", downPos)
 				if !seenAlready(seen, downPos) {
@@ -100,9 +96,9 @@ func main() {
 			}
 		}
 
-		leftPos := lastPos.move(-1, 0)
-		if isValidPoint(leftPos, input) {
-			leftPos.Value = []rune(input[leftPos.Y])[leftPos.X]
+		leftPos := lastPos.Translate(-1, 0)
+		if isValidPoint(leftPos.Point, input) {
+			leftPos.Value = []rune(input[leftPos.Point.Y])[leftPos.Point.X]
 			if lastPos.canTravel(leftPos) {
 				fmt.Printf("\tCan travel Left! %v\n", leftPos)
 				if !seenAlready(seen, leftPos) {
@@ -117,9 +113,9 @@ func main() {
 			}
 		}
 
-		upPos := lastPos.move(0, -1)
-		if isValidPoint(upPos, input) {
-			upPos.Value = []rune(input[upPos.Y])[upPos.X]
+		upPos := lastPos.Translate(0, -1)
+		if isValidPoint(upPos.Point, input) {
+			upPos.Value = []rune(input[upPos.Point.Y])[upPos.Point.X]
 			if lastPos.canTravel(upPos) {
 				fmt.Printf("\tCan travel Up!%v\n", upPos)
 				if !seenAlready(seen, upPos) {
@@ -154,7 +150,7 @@ func main() {
 
 func seenAlready(seen []ValuePoint, pos ValuePoint) bool {
 	for _, s := range seen {
-		if pos.X == s.X && pos.Y == s.Y {
+		if pos.Point.X == s.Point.X && pos.Point.Y == s.Point.Y {
 			fmt.Printf("\t\tCan already get to %v\n", pos)
 			return true
 		}
@@ -173,7 +169,7 @@ func makeNewPath(pathInspect []ValuePoint, newPos ValuePoint) []ValuePoint {
 	return newPath
 }
 
-func isValidPoint(maybe ValuePoint, input []string) bool {
+func isValidPoint(maybe math.Point2D, input []string) bool {
 	return maybe.Y >= 0 &&
 		maybe.X >= 0 &&
 		maybe.Y < len(input) &&
@@ -186,7 +182,7 @@ func findFirst(in []string, searchFor rune) (ValuePoint, error) {
 			return r == searchFor
 		})
 		if x != -1 {
-			return ValuePoint{X: x, Y: y, Value: searchFor}, nil
+			return ValuePoint{Point: math.Point2D{X: x, Y: y}, Value: searchFor}, nil
 		}
 	}
 	errorMsg := fmt.Sprintf("rune %v not found", searchFor)

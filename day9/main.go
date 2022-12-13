@@ -9,12 +9,7 @@ import (
 )
 
 type point struct {
-	X int
-	Y int
-}
-
-func (p point) move(xVec int, yVec int) point {
-	return point{X: p.X + xVec, Y: p.Y + yVec}
+	math.Point2D
 }
 
 func (p point) follow(head point) (point, bool) {
@@ -33,7 +28,7 @@ func (p point) follow(head point) (point, bool) {
 	} else if head.Y < p.Y {
 		yVec = -1
 	}
-	return p.move(xVec, yVec), true
+	return point{p.Translate(xVec, yVec)}, true
 }
 
 func main() {
@@ -56,7 +51,7 @@ func main() {
 	knots := make(map[int]point)
 
 	for i := 0; i < length; i++ {
-		knots[i] = point{X: 0, Y: 0}
+		knots[i] = point{}
 	}
 	tailVisits[knots[length-1]] = 1
 
@@ -81,7 +76,7 @@ func main() {
 		}
 
 		for m := 0; m < magnitude; m++ {
-			knots[0] = knots[0].move(xVec, yVec)
+			knots[0] = point{knots[0].Translate(xVec, yVec)}
 			for k := 1; k < length; k++ {
 				moved := false
 				knots[k], moved = knots[k].follow(knots[k-1])
