@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d30ea78b-6860-44de-ba7e-d5ec44036ff0" name="Changes" comment="day 16">
+      <change afterPath="$PROJECT_DIR$/colutil/IntHeap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/colutil/cmd/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/colutil/priorityqueue.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day17/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day17/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day17/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day18/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day18/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day18/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day19/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day19/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day19/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day20/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day20/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day20/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day21/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day21/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day21/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day22/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day22/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day22/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day23/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day23/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day23/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day24/trivial.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day25/trivial.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maze/maze.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/advent-of-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advent-of-code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+        <option value="Go Application" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.19.4/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="dg24gpvk" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IL4AmLrKqxVuQkQGExyWD6Ouf5" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go Application&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;configurable..is.expanded&quot;: &quot;false&quot;,
+    &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/davidbraley/git/dbraley/advent-of-code/day13&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.goide.configuration.GoLibrariesConfigurableProvider&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="GoMoveDeclarationDialog.RECENT_KEY">
+      <recent name="$PROJECT_DIR$/math" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day13" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day23/scratch" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/dbraley/advent-of-code/day25">
+    <configuration name="go build github.com/dbraley/advent-of-code/day22" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="advent-of-code" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/dbraley/advent-of-code/day22" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/day22/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/dbraley/advent-of-code/day23" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="advent-of-code" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/dbraley/advent-of-code/day23" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/day23/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/dbraley/advent-of-code/day23/scratch" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="advent-of-code" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/dbraley/advent-of-code/day23/scratch" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/day23/scratch/main2.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/dbraley/advent-of-code/day24" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="advent-of-code" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/dbraley/advent-of-code/day24" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/day24/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/dbraley/advent-of-code/day25" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="advent-of-code" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/dbraley/advent-of-code/day25" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/day25/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/dbraley/advent-of-code/day25" />
+        <item itemvalue="Go Build.go build github.com/dbraley/advent-of-code/day24" />
+        <item itemvalue="Go Build.go build github.com/dbraley/advent-of-code/day23" />
+        <item itemvalue="Go Build.go build github.com/dbraley/advent-of-code/day23/scratch" />
+        <item itemvalue="Go Build.go build github.com/dbraley/advent-of-code/day22" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Day 1&#10;&#10;Quick and Dirty. I usually end up taking more time to write tests than is really necessary for this, trying to skip (most) of that this year.&#10;&#10;Also borrowed a file reader from a previous year, mostly because I didn't feel like handcrafting one yet again." />
+    <MESSAGE value="Day 2" />
+    <MESSAGE value="Day 3" />
+    <MESSAGE value="Day 4" />
+    <MESSAGE value="Day 5" />
+    <MESSAGE value="Day 6" />
+    <MESSAGE value="Day 7" />
+    <MESSAGE value="Day 8" />
+    <MESSAGE value="Day 9" />
+    <MESSAGE value="Day 10" />
+    <MESSAGE value="Refactors" />
+    <MESSAGE value="Day 11 &amp; 12 (initial)" />
+    <MESSAGE value="Day 13" />
+    <MESSAGE value="Refactor Point struct to pkg math" />
+    <MESSAGE value="day 14" />
+    <MESSAGE value="day 15" />
+    <MESSAGE value="day 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="day 16" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day8/main.go</url>
+          <line>63</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day11/main.go</url>
+          <line>35</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day14/main.go</url>
+          <line>98</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day14/main.go</url>
+          <line>92</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day14/main.go</url>
+          <line>103</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day14/main.go</url>
+          <line>77</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day16/main.go</url>
+          <line>190</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day16/main.go</url>
+          <line>163</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/colutil/cmd/main.go</url>
+          <line>20</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/colutil/cmd/main.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day17/main.go</url>
+          <line>167</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day17/main.go</url>
+          <line>99</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day17/main.go</url>
+          <line>104</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day17/main.go</url>
+          <line>96</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day18/main.go</url>
+          <line>221</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day18/main.go</url>
+          <line>225</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day18/main.go</url>
+          <line>137</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day18/main.go</url>
+          <line>129</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day19/main.go</url>
+          <line>83</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day19/main.go</url>
+          <line>182</line>
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day19/main.go</url>
+          <line>185</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day19/main.go</url>
+          <line>188</line>
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day19/main.go</url>
+          <line>191</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>102</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>149</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>157</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>119</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>118</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day21/main.go</url>
+          <line>163</line>
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day22/main.go</url>
+          <line>277</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day22/main.go</url>
+          <line>40</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day22/main.go</url>
+          <line>59</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day24/main.go</url>
+          <line>134</line>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day24/main.go</url>
+          <line>49</line>
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day25/main.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/day25/main.go</url>
+          <line>54</line>
+          <option name="timeStamp" value="269" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="elf.Name" language="go" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
