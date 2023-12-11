@@ -1,0 +1,47 @@
+[src/bin/part2.rs:13] directions.len() = 307
+[src/bin/part2.rs:64] key = "AAA"
+[src/bin/part2.rs:64] key = "MGA"
+[src/bin/part2.rs:64] key = "DGA"
+[src/bin/part2.rs:64] key = "TLA"
+[src/bin/part2.rs:64] key = "RDA"
+[src/bin/part2.rs:64] key = "DPA"
+
+Found solution for AAA at ZZZ on step 24253:24253
+Found solution for AAA at ZZZ on step 48506:24253
+Found solution for AAA at ZZZ on step 72759:24253
+Found solution for AAA at ZZZ on step 97012:24253
+Found solution for AAA at ZZZ on step 121265:24253
+
+Found solution for MGA at CTZ on step 21797:21797
+Found solution for MGA at CTZ on step 43594:21797
+Found solution for MGA at CTZ on step 65391:21797
+Found solution for MGA at CTZ on step 87188:21797
+Found solution for MGA at CTZ on step 108985:21797
+
+Found solution for DGA at BSZ on step 14429:14429
+Found solution for DGA at BSZ on step 28858:14429
+Found solution for DGA at BSZ on step 43287:14429
+Found solution for DGA at BSZ on step 57716:14429
+Found solution for DGA at BSZ on step 72145:14429
+
+Found solution for TLA at KKZ on step 16271:16271
+Found solution for TLA at KKZ on step 32542:16271
+Found solution for TLA at KKZ on step 48813:16271
+Found solution for TLA at KKZ on step 65084:16271
+Found solution for TLA at KKZ on step 81355:16271
+
+Found solution for RDA at SLZ on step 20569:20569
+Found solution for RDA at SLZ on step 41138:20569
+Found solution for RDA at SLZ on step 61707:20569
+Found solution for RDA at SLZ on step 82276:20569
+Found solution for RDA at SLZ on step 102845:20569
+
+Found solution for DPA at RXZ on step 13201:13201
+Found solution for DPA at RXZ on step 26402:13201
+Found solution for DPA at RXZ on step 39603:13201
+Found solution for DPA at RXZ on step 52804:13201
+Found solution for DPA at RXZ on step 66005:13201
+
+24253	21797	14429	16271	20569	13201	
+79	71	47	53	67	43	40253386739 // cell / directions.len()
+						12357789728873 // 79*71*47*53*67*43*307 (There are no other common factors)
