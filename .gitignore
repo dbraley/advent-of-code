@@ -10,3 +10,12 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+### zig ###
+# Zig programming language
+
+*zig-cache/
+*zig-out/
+*build/
+*build-*/
+*docgen_tmp/
