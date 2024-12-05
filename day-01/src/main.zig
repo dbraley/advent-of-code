@@ -41,17 +41,21 @@ pub fn main() !void {
         try col2.append(num2);
     }
 
-    // Sort both arrays
-    std.sort.heap(i32, col1.items, {}, std.sort.asc(i32));
-    std.sort.heap(i32, col2.items, {}, std.sort.asc(i32));
-
-    // Calculate sum of differences
-    var total_difference: i32 = 0;
-    for (col1.items, col2.items) |v1, v2| {
-        total_difference += if (v1 > v2) v1 - v2 else v2 - v1;
+    // Calculate total score
+    var total_score: i32 = 0;
+    for (col1.items) |value| {
+        var count: i32 = 0;
+        // Count occurrences in col2
+        for (col2.items) |col2_value| {
+            if (value == col2_value) {
+                count += 1;
+            }
+        }
+        // Add score for this value
+        total_score += value * count;
     }
 
-    std.debug.print("Total difference: {d}\n", .{total_difference});
+    std.debug.print("Total score: {d}\n", .{total_score});
 }
 
 test "simple test" {
